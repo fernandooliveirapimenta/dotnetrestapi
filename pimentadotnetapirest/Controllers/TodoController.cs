@@ -24,6 +24,8 @@ namespace pimentadotnetapirest.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems()
         {
+            Console.WriteLine("oooi");
+
             return await _context.TodoItems.ToListAsync();
         }
 
@@ -42,7 +44,6 @@ namespace pimentadotnetapirest.Controllers
         }
 
         // PUT: api/Todo/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTodoItem(long id, TodoItem todoItem)
         {
@@ -73,7 +74,6 @@ namespace pimentadotnetapirest.Controllers
         }
 
         // POST: api/Todo
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<TodoItem>> PostTodoItem(TodoItem todoItem)
         {
